@@ -17,7 +17,44 @@
       font-family: 'Recursive', sans-serif;
       font-size: larger;
     }
-
+    @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap");
+      a {
+        font-family: "Jost", sans-serif;
+        text-transform: uppercase;
+        font-size: 20px;
+        margin-top: 12px;
+        color: #fff;
+        letter-spacing: 3px;
+     }
+      .navbar-brand {
+        margin-left: 20px;
+        font-family: "Jost", sans-serif;
+        font-size: 40px;
+        margin-top: 10px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+     }
+     nav {
+       height: 70px;
+       display: flex;
+       align-items: center;
+     }
+      .img-logo {
+        height: 45px;
+        width: 45px;
+        margin-left: 29px;
+        margin-top: 10px;
+    }
+     .img-logo2 {
+        width: 45px;
+        margin-left: 129px;
+        margin-top: 100px;
+    }
+      @media screen and (max-width: 768px) {
+      nav {
+        height: 90px;
+      }
+    }
     .customborder {
       border-radius: 2%;
       border: 2px solid #E95420;
@@ -74,7 +111,12 @@
   <!-- navbar  -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Logo</a>
+      <a href="/" style="text-decoration: none; margin-top: 0px;">
+        <img
+          src="https://cdn-user-icons.flaticon.com/65838/65838186/1646388515191.svg?token=exp=1646389449~hmac=320e8bad594f4a49818739c2a2e67fd7"
+          alt="LOGO" class="img-logo">
+        </a>
+        <a class="navbar-brand name-logo" href="/">logo</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
