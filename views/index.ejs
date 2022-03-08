@@ -5,37 +5,624 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Font  -->
+  <!-- Font  -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
+  <link rel="shortcut icon"
+    href="https://cdn-user-icons.flaticon.com/65838/65838186/1646388515191.svg?token=exp=1646389449~hmac=320e8bad594f4a49818739c2a2e67fd7" />
   <title>Authentications</title>
 </head>
 <style>
-  body {
-    font-family: 'Recursive', sans-serif;
+  @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap");
+
+  a {
+    font-family: "Jost", sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 12px;
+    color: #fff;
+    letter-spacing: 3px;
+  }
+
+  .navbar-brand {
+    margin-left: 20px;
+    font-family: "Jost", sans-serif;
+    font-size: 40px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  nav {
+    height: 70px;
+    display: flex;
+    align-items: center;
+  }
+
+  .underline:hover {
+    text-decoration: underline;
+  }
+
+  .img-logo {
+    height: 45px;
+    width: 45px;
+    margin-left: 29px;
+    margin-top: 10px;
+  }
+
+  .img-logo2 {
+    width: 45px;
+    margin-left: 129px;
+    margin-top: 100px;
+  }
+
+  @media screen and (max-width: 768px) {
+    nav {
+      height: 90px;
+    }
+  }
+
+  .contaner-img {
+    margin: 0%;
+    height: 550px;
+  }
+
+  .container2-fluid {
+    height: 200px;
+  }
+
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+
+  .arr {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+  #img1 {
+    height: 660px;
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+
+  #img22 {
+    height: 660px;
+    display: none;
+    position: relative;
+    background-repeat: no-repeat;
+    font-family: "Jost", sans-serif;
+    width: 100%;
+    font-size: 35px;
+    text-align: start;
+  }
+
+  #div2 {
+    height: 660px;
+    display: none;
+  }
+
+  #img11 {
+    position: absolute;
+    top: 350px;
+    right: 30px;
+    display: block;
+    width: 25px;
+    height: 25px;
+  }
+
+  #img111 {
+    font-family: "Jost", sans-serif;
+    position: absolute;
+    font-size: 35px;
+    color: #333136;
+    text-shadow: black;
+    text-align: start;
+    top: 200px;
+    margin-left: 50px;
+  }
+
+  #img111 p {
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 36px;
+    color: #333136;
+    line-height: 50px;
+  }
+
+  #img2 {
+    position: absolute;
+    top: 350px;
+    left: 30px;
+    display: none;
+    width: 25px;
+    height: 25px;
+  }
+
+  #img222 {
+    width: 60%;
+    height: 80px;
+    color: #000;
+    display: none;
+  }
+
+  #img222 p {
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 36px;
+    color: #000;
+    line-height: 50px;
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    margin-left: 770px;
+    top: 200px;
+    width: 40%;
+  }
+
+  #title {
+    font-size: 70px;
+  }
+
+  .nav-address {
+    margin-bottom: 70px;
+    height: 280px;
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .about-container {
+    width: 100%;
+    justify-content: center;
+    position: relative;
+  }
+
+  .about-header {
+    align-self: center;
+    text-align: center;
+    margin-top: 20px;
+    color: #fdf3f3;
+  }
+
+  .about-dscribe {
+    color: #fdf3f3;
+    font-style: normal;
+    font-weight: normal;
+    font-family: Jost;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #hydrated {
+    visibility: inherit;
+    position: absolute;
+    top: 620px;
+    margin-left: 90px;
+    transition: all 0.7s ease;
+    transition-property: color, background-color;
+    cursor: pointer;
+    display: none;
+    margin-left: 930px;
+  }
+
+  #hydrated1 {
+    visibility: inherit;
+    position: absolute;
+    transition: all 0.7s ease;
+    transition-property: color, background-color;
+    cursor: pointer;
+    margin-left: 930px;
+    justify-content: center;
+    margin-left: 420px;
+  }
+
+  #hydrated2 {
+    display: none;
+    visibility: inherit;
+    position: absolute;
+    transition: all 0.7s ease;
+    transition-property: color, background-color;
+    cursor: pointer;
+    margin-left: 930px;
+    justify-content: center;
+    margin-left: 420px;
+
+  }
+
+  .wb-button-secondary.wb-button-theme-dark {
+    border-color: var(--wb-grey-40);
+    color: var(--wb-white);
+  }
+
+  .wb-button-secondary.wb-button-theme-dark.wb-button-semi-transparent {
+    background-color: rgba(0, 0, 0, .56);
+  }
+
+  .wb-button-large {
+    padding: 15px 31px;
+  }
+
+  #Get-free {
+    display: block;
+    position: absolute;
+    top: 620px;
+    margin-left: 90px;
+    transition: all 0.7s ease;
+    transition-property: color, background-color;
+    cursor: pointer;
+  }
+
+  .getfree {
+    border: 1px solid black;
+    width: 250px;
+    height: 45px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding-top: 6px;
+  }
+
+  .getfree:hover {
+    background-color: #333136;
+    transition: all 0.7s ease;
+  }
+
+  .readmore2 {
+    border: 1px solid black;
+    width: 250px;
+    height: 45px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding-top: 6px;
+  }
+
+  .readmore2:hover {
+    background-color: #fdf3f3;
+    transition: all 0.5s ease;
+  }
+
+  #text-getfree {
+    color: #000;
+  }
+
+  #text-getfree:hover {
+    color: #fdf3f3;
+  }
+
+  #text-getfree2 {
+    color: #000;
+  }
+
+  #text-getfree2:hover {
+    color: #000;
+  }
+
+  @media (min-width: 48em) and (max-width: 63.99em) {
+    .wb-stage-buttons.wb-button {
+      flex: 1;
+    }
+  }
+
+  .footer_container {
+    width: 100%;
+    margin-top: 420px;
+    text-align: center;
+    position: inherit;
+  }
+
+  footer {
+    height: 360px;
+    width: 100%;
+    background: #1d1c1e;
+    position: relative;
+  }
+
+  .footer__icons a {
+    color: #fff;
+    margin-left: 16px;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  .footer_container p {
+    opacity: 0.5;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .footer__content {
+    padding-top: 144px;
+    margin-bottom: 40px;
+  }
+
+  .footer__logo {
+    width: 202px;
+    height: 27px;
+    display: inline;
+
+  }
+
+  .socials {
+    margin-right: 16px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .line {
+    width: 1111px;
+    height: 1px;
+    background: #ffffff;
+    mix-blend-mode: normal;
+    opacity: 0.1;
+    margin-bottom: 25px;
+    margin-left: 100px;
+  }
+
+  .footer__contact--left {
+    margin-right: 197px;
+  }
+
+  .footer__contact span {
+    font-weight: normal;
+  }
+
+  .footer__icons-box {
+    align-self: start;
+  }
+
+  .autho-title {
+    margin-bottom: 32px;
+    color: #fff;
+    display: inline;
+  }
+
+  .footer__bottom {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .footer__bottom {
+      width: 690px;
+      height: 78px;
+    }
+  }
+
+  .footer__icons {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+
+  }
+
+  .footer__contact {
+    width: 350px;
+    height: 78px;
+    padding: 0px;
+    margin: 0px;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    font-weight: bold;
+    color: #fdf3f3;
+  }
+
+  .name-logo2 {
+    display: inline-block;
+    margin-top: 100px;
+  }
+
+  .namelogo {
+    color: #fdf3f3;
+  }
+
+  .namelogo:hover {
+    color: #000;
+    cursor: pointer;
+  }
+
+  .fo-container {
+    padding-bottom: 2px;
+
+  }
+
+  /*contact-box*/
+  @media screen and (max-width: 768px) {
+    .contact-box {
+      width: 327px;
+      height: 379px;
+      top: 3394px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .contact-box {
+      width: 690px;
+      height: 350px;
+      top: 2624px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .contact-box {
+    position: absolute;
+    width: 1111px;
+    height: 292px;
+    margin-top: 25px;
+    margin-left: 110px;
+    background: #3b2357;
+    border-radius: 17px;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .contact__textbox {
+    font-family: "Jost", sans-serif;
+  }
+
+  @media screen and (max-width: 768px) {
+    .contact__title {
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 36px;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      width: 279px;
+    }
+
+    .contact__description {
+      width: 279px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .contact__title {
+      margin: 0px;
+      padding: 0px;
+      width: 335px;
+      margin-bottom: 16px;
+    }
+
+    .contact__description {
+      width: 430px;
+    }
+
+    .contact__btn {
+      margin: 0px;
+      padding: 0px;
+      margin-top: 32px;
+    }
+  }
+
+  .contact__title {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 50px;
+    color: #ffffff;
+    height: 98px;
+    width: 348px;
+    text-align: start;
+    justify-content: start;
+    margin-top: 60px;
+    margin-left: 70px;
+  }
+
+  .btn {
+    background: #ffffff;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-family: Jost;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 152px;
+    height: 56px;
+    border: none;
+    transition: all 0.7s ease;
+    transition-property: color, background-color;
+    cursor: pointer;
+  }
+
+  .contact__btn {
+    margin-top: 118px;
+    margin-right: 96px;
+  }
+  .contact__btn:hover {
+    background-color:#333136;
+  }
+  .btn:hover{
+    color: #e7def0;
+  }
+
+  .contact__description {
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #fff;
+    text-align: center;
+    margin-left: 65px;
+  }
+
+  /*vedio-box*/
+  #vedio-box {
+    width: 100%;
+    height: 800px;
+    margin-bottom: 150px;
+    background-color: #e7def0;
+    border-top-left-radius: 1000px;
+    border-bottom-left-radius: 1000px;
+    padding-top: 20px;
+  }
+
+  #my-vedio {
+    position: absolute;
+    justify-content: center;
+    margin-left: 210px;
+    margin-top: 120px;
+  }
+  #vedio-title{
+    font-family: "Jost", sans-serif;
+    position: absolute;
     font-size: larger;
+    justify-content: center;
+    text-align: center;
+    margin-left: 440px;
   }
 </style>
 
 <body>
-
-  <!-- navbar  -->
+  <!-- navbar  -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Authentications</a>
+      <a href="/" style="text-decoration: none; margin-top: 0px;">
+        <img
+          src="https://cdn-user-icons.flaticon.com/65838/65838186/1646388515191.svg?token=exp=1646389449~hmac=320e8bad594f4a49818739c2a2e67fd7"
+          alt="LOGO" class="img-logo">
+      </a>
+      <a class="navbar-brand name-logo" href="/">logo</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <% if(logged){ %>
             <li class="nav-item">
@@ -53,17 +640,196 @@
       </div>
     </div>
   </nav>
-  <!-- navbar end  -->
 
-  <div class="container py-3">
-    <h1>Welcome To Desi Programmer</h1>
-    <h2>This is a Tutorial About Node Js Authentication and Authorization</h2>
+
+
+  <div style="height: 100%; width: 100%; ">
+    <img id="img1" src="https://www.complysci.com/wp-content/uploads/2020/02/iStock-1158337567-mobile-lock.jpg"
+      alt="background-img">
+    <i class="right arr" id="img11" onclick="myFunction1()"></i>
+    <div id="img111">
+      <p>
+        <strong><b>
+            <h1 id="title">Welcome to our<br>Website</h1>
+          </b></strong>
+        Do you want to enjoy experiment with us?<br>
+        You can create your own world!<br>
+        From your place, for all the world
+      </p>
+    </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-    crossorigin="anonymous"></script>
+  <div id="div2">
+    <img id="img22"
+      src="https://rhopen.com.br/wp-content/uploads/2017/12/146863-transformacao-digital-o-que-e-e-por-que-sua-empresa-nao-deve-ficar-de-fora-1024x682.jpg"
+      alt="background-img">
+    <i class="left arr" id="img2" onclick="myFunction2()"></i>
+    <div id="img222">
+      <p>
+        We would be happy to speak with you about your project.
+        First consultations are always at no-cost to you!<br>
+        Tell us a little bit about your project
+        and a member of our team will reach out to you shortly.
+    </div>
+  </div>
 
+  <wb-stage-buttons id="hydrated">
+    <a id="text-getfree" href="#" target="_self" style="text-decoration: none;"
+      class="wb-button wb-button-theme-dark wb-button-secondary wb-button-large wb-button-semi-transparent">Read
+      more</a>
+  </wb-stage-buttons>
+
+  <wb-stage-buttons id="Get-free">
+    <div class="getfree">
+      <a id="text-getfree" href="/signup" target="_self" style="text-decoration: none;"
+        class="wb-button wb-button-secondary  wb-button-semi-transparent">Get Free
+        Trial</a>
+    </div>
+  </wb-stage-buttons>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-address">
+    <div class="about-container">
+      <h1 class="about-header">Take a look at our content</h1>
+      <p class="about-dscribe">Founded in 2022, we are a creative agency that produces lasting results for our
+        clients.
+      </p>
+      <wb-stage-buttons id="hydrated1">
+        <div class="readmore2" style="width: 500px;">
+          <a id="text-getfree2" href="#" target="_self" style="text-decoration: none;"
+            class="wb-button wb-button-large wb-button-semi-transparent">Read
+            more</a>
+        </div>
+      </wb-stage-buttons>
+      <wb-stage-buttons id="hydrated2">
+        <div class="readmore2" style="width: 500px;">
+          <a id="text-getfree2" href="#" target="_self" style="text-decoration: none;"
+            class="wb-button wb-button-large wb-button-semi-transparent">Contact Us</a>
+        </div>
+      </wb-stage-buttons>
+    </div>
+  </nav>
+
+  <div id="vedio-box">
+    <div id="vedio-title" style="width:1111; height: 40px; ">
+      <h1>To know more about us<br>Watch this video</h1>
+    </div>
+    <video id="my-vedio" width="920" height="540" controls>
+      <source src="https://storage.googleapis.com/lumen5-prod-renderedvideos/outputbT6kJmxpPOqje3NDs5.mp4"
+        type="video/mp4">
+      <source src="movie.ogg" type="video/ogg">
+    </video>
+  </div>
+
+  <div class="contact-box">
+    <div class="contact__textbox">
+      <h1 class="contact__title">Let’s talk about your project</h1>
+      <p class="contact__description"> Ready to take it to the next level? Contact us today and find out how our
+      </p>
+    </div>
+    <div>
+      <form method="get" action="/signup">
+        <button type="submit" class="contact__btn btn">
+          get in touch
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer_container">
+    <div class="fo-container">
+      <div class="footer_container flex">
+        <a href="/" style="text-decoration: none;">
+          <img
+            src="https://cdn-user-icons.flaticon.com/65838/65838186/1646388515191.svg?token=exp=1646389449~hmac=320e8bad594f4a49818739c2a2e67fd7"
+            alt="logo" class="img-logo2">
+        </a>
+        <div class="navbar-brand name-logo2">
+          <p class="namelogo">Logo</p>
+        </div>
+      </div>
+      <div class="line">
+      </div>
+      <div class="footer__bottom flex flex-column-mobile">
+        <div class="footer__contact">
+          <p>Logo Central Office<br>
+            <span>9999 Najah Street<br>
+              Palestine, Najah national university</span>
+          </p>
+        </div>
+        <div class="footer__contact footer__contact--left">
+          <p>
+            Contact Us (Central Office)<br>
+            P : +1 999-999-9999<br>
+            M : contact@logo.com</p>
+        </div>
+        <div class="footer__icons-box">
+          <ul class="footer__icons flex">
+            <li>
+              <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/174/174848.png" alt="icon-facebook"
+                  class="socials"></a>
+            </li>
+            <li>
+              <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="icon-youtube"
+                  class="socials"></a>
+            </li>
+            <li>
+              <a href="#"><img
+                  src="https://cdn-icons.flaticon.com/png/128/3536/premium/3536505.png?token=exp=1646433169~hmac=5d7f6fb3c85eaf863940d19bbe62901b"
+                  alt="icon-linkdin" class="socials"></a>
+            </li>
+            <li>
+              <a href="#"><img
+                  src="https://cdn-icons.flaticon.com/png/128/3536/premium/3536559.png?token=exp=1646433334~hmac=9b5e4f3a57b9b589838d0d271bc58de5"
+                  alt="icon-pinterest" class="socials"></a>
+            </li>
+            <li>
+              <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="icon-instagram"
+                  class="socials"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- navbar end -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+
+  <script>
+    function myFunction1() {
+      document.getElementById("img1").style.display = "none";
+      document.getElementById("img11").style.display = "none";
+      document.getElementById("img111").style.display = "none";
+      document.getElementById("Get-free").style.display = "none";
+      document.getElementById("hydrated1").style.display = "none";
+      document.getElementById("hydrated2").style.display = "block";
+      document.getElementById("img2").style.display = "block";
+      document.getElementById("img22").style.display = "block"
+      document.getElementById("img222").style.display = "block";
+      document.getElementById("div2").style.display = "block";
+      document.getElementById("hydrated").style.display = "block";
+    }
+
+    function myFunction2() {
+      document.getElementById("img2").style.display = "none";
+      document.getElementById("img22").style.display = "none";
+      document.getElementById("img222").style.display = "none";
+      document.getElementById("div2").style.display = "none";
+      document.getElementById("hydrated2").style.display = "none";
+      document.getElementById("hydrated1").style.display = "block";
+      document.getElementById("img1").style.display = "block";
+      document.getElementById("img11").style.display = "block";
+      document.getElementById("img111").style.display = "block";
+      document.getElementById("Get-free").style.display = "block";
+      document.getElementById("hydrated").style.display = "none";
+
+    }
+  </script>
 </body>
 
 </html>
