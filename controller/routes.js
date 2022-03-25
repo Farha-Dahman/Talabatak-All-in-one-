@@ -55,4 +55,17 @@ router.get('/user/verifyemail', async (req, res) => {
     }
 });
 
+router.get('/google', passport.authenticate('google', { scope: ['profile', 'email',] }));
+
+router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
+    res.redirect('/profile');
+});
+
+router.get('/profile', checkAuth, (req, res) => {
+    // adding a new parameter for checking verification
+    res.render('profile', { username: req.user.username, verified : req.user.isVerified });
+
+});
+
+router.use(userRoutes);
 module.exports = router;
