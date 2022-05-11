@@ -1,246 +1,482 @@
-<%- include ../partials/header %> <%- include ../partials/categories-navbar%>
+<%- include ../partials/header %>
+  <%- include ../partials/categories-navbar%>
 
-<!-- Top Carousel -->
-<div
-  id="topCarousel"
-  class="carousel slide mb-3 mt-0 pt-0"
-  data-ride="carousel"
->
-  <ol class="carousel-indicators">
-    <li data-target="#topCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#topCarousel" data-slide-to="1"></li>
-    <li data-target="#topCarousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <a href="/products/Shoes"><img class="d-block w-100" src="/images/slide1.jpg" alt="First slide" /></a>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="/images/slide2.jpg" alt="Second slide" />
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="/images/slide3.jpg" alt="Third slide" />
-    </div>
-  </div>
-  <a
-    class="carousel-control-prev"
-    href="#topCarousel"
-    role="button"
-    data-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a
-    class="carousel-control-next"
-    href="#topCarousel"
-    role="button"
-    data-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+    <style>
+      .product-index-box img {
+        width: 90%;
+        height: 20em;
+        object-fit: cover;
+        border: 1px solid #000000;
+        border-radius: 5%;
+        transition: opacity .5s;
 
-<!-- Store's categories section -->
-<!-- <div class="container">
-  <h3 class="text-center mb-3 mt-4">Store's Categories</h3>
-  <% if (categories) { %>
-  <div class="row text-center m-auto">
-    <% for(let i=0; i<3; i++){ %>
-    <div class="col-lg-3 col-md-3 col-sm-12 text-center ml-2">
-      <a class="title-link" href="/products/<%=categories[i].slug%>">
-        <img src="images/dept<%=i%>.jpg" alt="category" class="circle-img" />
-        <h4 class="mb-3 mt-3"><%=categories[i].title%></h4>
+      }
+
+      .S-product-item__wrapper-upper-left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 12px;
+      }
+
+      .S-product-item__wrapper-upper-left .wrapper-upper-left__flashsale {
+        color: #222;
+      }
+
+      .S-product-item__wrapper-upper-left .wrapper-upper-left__flashsale {
+        text-align: center;
+        padding: 0;
+        background: #facf19;
+      }
+
+      .S-product-item__wrapper-upper-left .wrapper-upper-left__flashsale {
+        width: 48px;
+        height: 60px;
+        margin: 45%;
+      }
+
+      .S-product-item__wrapper-upper-left .wrapper-upper-left__flashsale .iconfont {
+        font-size: 22px;
+      }
+
+      .icon-flashsale_icon:before {
+        content: "\26A1";
+      }
+
+      .mt-2 mb-237 {
+        align-content: center;
+        margin: 50%;
+        position: relative;
+        left: 50%;
+      }
+
+      .S-product-item__retail-price_line {
+        font-size: 12px;
+        font-weight: 400;
+        color: #999;
+        text-decoration: line-through;
+      }
+
+      .c-footer .ft-right .ft-right-payment .bank-img .c-img-con-m {
+        display: inline-block;
+        height: 24px;
+        margin-right: 10px;
+      }
+
+      img {
+        vertical-align: middle;
+        border-style: none;
+        width: 50px;
+        margin-right: 1px;
+      }
+
+      .c-img-con-m {
+        vertical-align: middle;
+        /* border-style: none; */
+        width: 50px;
+        margin-right: 1px;
+        /* top: inherit; */
+        padding-top: 10px;
+      }
+
+      .ft-right-payment {
+        padding-top: 30px;
+        margin-left: 100px;
+      }
+
+      /*
+body{
+  background: #ffffff;
+}
+.navbar-custom {
+    background-color: white;
+}
+.navbar-custom .navbar-brand, .navbar-custom .navbar-text, .navbar-custom .navbar-nav .nav-link {
+    color: #040403;
+}*/
+      .form-inline {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 500px;
+      }
+    </style>
+
+    <!-- Top Carousel -->
+    <div id="topCarousel" class="carousel slide mb-3 mt-0 pt-0" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#topCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#topCarousel" data-slide-to="1"></li>
+        <li data-target="#topCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="/products/shoes"><img class="d-block w-100" src="/images/slide1.jpg" alt="First slide" /></a>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="/images/slide2.jpg" alt="Second slide" />
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="/images/slide3.jpg" alt="Third slide" />
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#topCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#topCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
       </a>
     </div>
-    <%} %>
-    <div class="col-lg-1 col-md-1 col-sm-12 text-center mx-auto">
-      <a href="/products">
-        <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
-      </a>
+    <hr class="gradient-style" />
+
+
+    <!-- Latest products slider -->
+    <div class="container mb-4 mt-4">
+      <!--Carousel Wrapper-->
+        <div class="controls-top mb-2">
+          <div class="row">
+            <div class="col-8">
+              <h3>#TALABATAK-FlashSale</h3>
+            </div>
+          </div>
+        </div>
+        <!--/.Controls-->
+
+<div class="carousel-inner" role="listbox" style="margin-top: 50px;">
+  <!--First slide-->
+  <div class="carousel-item active">
+    <div class="row">
+      <% for(let i=7; i<69; i+=20 ) { %>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-index-box">
+          <div class="single-product d-flex flex-column h-100">
+            <a class="title-link" href="/products/<%=products[i].category.slug%>/<%=products[i]._id%>">
+              <img id="first" src="<%= products[i].imagePath %>" alt="Bag" class="img-fluid" /></a>
+            <div class="product-info">
+              <a class="title-link" href="/products/<%=products[i].category.slug%>/<%=products[i]._id%>">
+                <div class="S-product-item__wrapper-upper-left">
+                  <div role="contentinfo" class="wrapper-upper-left__flashsale wrapper-upper-left__discount_flash"
+                    tabindex="0" data-ada-level="0" data-ada-pos="1-0"><i class="iconfont icon-flashsale_icon"></i>
+                    <span class="wrapper-upper-left__flashsale-percent">-45%</span></div>
+                </div>
+                <h6 class="mt-2 mb-2">
+                  <%= products[i].title %>
+                </h6>
+              </a>
+              <div class="price">$<%= products[i].price %>
+              </div>
+              <span role="contentinfo" aria-label="original priceUS$15.00" tabindex="0"
+              class="S-product-item__retail-price S-product-item__retail-price_line" style="font-size: 12px;">
+              US$100.00
+            </span>
+            </div>
+            <% if(products[i].available) {%>
+              <a href="/add-to-cart/<%=products[i]._id%>"
+                class="btn btn-block btn-secondary button-style mt-auto mb-2">
+                Add to My Cart
+              </a>
+              <% } else { %>
+                <a href="#" class="btn btn-block btn-danger button-style-danger mt-2 mb-2">
+                  Sold out
+                </a>
+                <%} %>
+          </div>
+        </div>
+        <%}%>
     </div>
   </div>
-  <%}%>
-</div> -->
 
-<hr class="gradient-style" />
 
-<!-- Latest products slider -->
-<div class="container mb-4 mt-4">
-  <!--Carousel Wrapper-->
-  <div
-    id="products-carousel"
-    class="carousel slide carousel-multi-item"
-    data-ride="carousel"
-  >
-    <!--Controls-->
-    <div class="controls-top mb-2">
-      <div class="row">
-        <div class="col-8">
-          <h3>Latest Products</h3>
-        </div>
-        <div class="col-4">
-          <div class="controls float-right hidden-xs">
-            <a
-              class="left fa fa-chevron-left btn btn"
-              href="#products-carousel"
-              data-slide="prev"
-            ></a
-            ><a
-              class="right fa fa-chevron-right btn"
-              href="#products-carousel"
-              data-slide="next"
-            ></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--/.Controls-->
 
-    <!--Slides-->
-    <div class="carousel-inner" role="listbox">
-      <!--First slide-->
-      <div class="carousel-item active">
-        <div class="row">
-          <% for(let i=0; i<3; i++) { %>
-          <div class="col-md-4 product-index-box">
-            <div class="single-product d-flex flex-column h-100">
-              <a
-                class="title-link"
-                href="/products/<%=products[i].category.slug%>/<%=products[i]._id%>"
-              >
-                <img
-                  src="<%= products[i].imagePath %>"
-                  alt="Bag"
-                  class="img-fluid"
-              /></a>
-              <div class="product-info">
-                <a
-                  class="title-link"
-                  href="/products/<%=products[i].category.slug%>/<%=products[i]._id%>"
-                >
-                  <h6 class="mt-2 mb-2"><%= products[i].title %></h6></a
-                >
-                <div class="price">$<%= products[i].price %></div>
-              </div>
-              <% if(products[i].available) {%>
-              <a
-                href="/add-to-cart/<%=products[i]._id%>"
-                class="btn btn-block btn-secondary button-style mt-auto mb-2"
-              >
-                Add to My Cart
-              </a>
-              <% } else { %>
-              <a
-                href="#"
-                class="btn btn-block btn-danger button-style-danger mt-2 mb-2"
-              >
-                Sold out
-              </a>
-              <%} %>
-            </div>
-          </div>
-          <%}%>
-        </div>
-      </div>
-      <!--/.First slide-->
-
-      <!--Second slide-->
-      <div class="carousel-item">
-        <div class="row">
-          <% for(let i=3; i<6; i++) { %>
-          <div class="col-md-4 product-index-box">
-            <div class="single-product d-flex flex-column h-100">
-              <a
-                class="title-link"
-                href="/products/<%=products[i].category.slug%>/<%=products[i]._id%>"
-              >
-                <img
-                  src="<%= products[i].imagePath %>"
-                  alt="Bag"
-                  class="img-fluid"
-              /></a>
-              <div class="product-info">
-                <a
-                  class="title-link"
-                  href="/products/<%=products[i].category.slug%>/<%=products[i]._id%>"
-                >
-                  <h6 class="mt-2 mb-2"><%= products[i].title %></h6></a
-                >
-                <div class="price">$<%= products[i].price %></div>
-              </div>
-              <% if(products[i].available) {%>
-              <a
-                href="/add-to-cart/<%=products[i]._id%>"
-                class="btn btn-block btn-secondary button-style mt-auto mb-2"
-              >
-                Add to My Cart
-              </a>
-              <% } else { %>
-              <a
-                href="#"
-                class="btn btn-block btn-danger button-style-danger mt-2 mb-2"
-              >
-                Sold out
-              </a>
-              <%} %>
-            </div>
-          </div>
-          <%}%>
-        </div>
-      </div>
-      <!--/.Second slide-->
-
-      <!--Third slide-->
-      <div class="carousel-item">
-        <div class="row">
-          <% for(let i=6; i<9; i++) { %>
-          <div class="col-md-4 product-index-box">
-            <div class="single-product d-flex flex-column h-100">
-              <a
-                class="title-link"
-                href="/products/<%=products[i].category.slug%>/<%=products[i]._id%>"
-              >
-                <img
-                  src="<%= products[i].imagePath %>"
-                  alt="Bag"
-                  class="img-fluid"
-              /></a>
-              <div class="product-info">
-                <a
-                  class="title-link"
-                  href="/products/<%=products[i].category.slug%>/<%=products[i]._id%>"
-                >
-                  <h6 class="mt-2 mb-2"><%= products[i].title %></h6></a
-                >
-                <div class="price">$<%= products[i].price %></div>
-              </div>
-              <% if(products[i].available) {%>
-              <a
-                href="/add-to-cart/<%=products[i]._id%>"
-                class="btn btn-block btn-secondary button-style mt-auto mb-2"
-              >
-                Add to My Cart
-              </a>
-              <% } else { %>
-              <a
-                href="#"
-                class="btn btn-block btn-danger button-style-danger mt-2 mb-2"
-              >
-                Sold out
-              </a>
-              <%} %>
-            </div>
-          </div>
-          <%}%>
-        </div>
-      </div>
-      <!--/.Third slide-->
-    </div>
-    <!--/.Slides-->
+  <hr class="gradient-style" style="margin-top: 560px;" />
+  <div class="text-center hero-container2" style="margin-top: 40px;">
+    <a href="/products/"><img class="d-block w-100 hero-image" src="/images/slide4.png"></a>
   </div>
-  <!--/.Carousel Wrapper-->
-</div>
 
-<%- include ../partials/footer %>
+
+  <hr class="gradient-style" style="margin-top: 70px;" />
+
+      <!-- Latest products slider -->
+      <div class="container mb-4 mt-4">
+      <div id="products-carousel" class="carousel slide carousel-multi-item" data-ride="carousel">
+        <!--Controls-->
+        <div class="controls-top mb-2">
+          <div class="row">
+            <div class="col-8">
+              <h3>Latest Products</h3>
+            </div>
+            <div class="col-4">
+              <div class="controls float-right hidden-xs">
+                <a class="left fa fa-chevron-left btn btn" href="#products-carousel" data-slide="prev"></a>
+                <a class="right fa fa-chevron-right btn" href="#products-carousel" data-slide="next"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        <!--/.Controls-->
+
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+          <!--First slide-->
+          <div class="carousel-item active">
+            <div class="row">
+              <% for(let i=55; i<60; i+=2) { %>
+                <div class="col-md-4 product-index-box">
+                  <div class="single-product d-flex flex-column h-100">
+                    <a class="title-link" href="/products/<%=products[i].category.slug%>/<%=products[i]._id%>">
+                      <img id="first" src="<%= products[i].imagePath %>" alt="Bag" class="img-fluid" /></a>
+                    <div class="product-info">
+                      <a class="title-link" href="/products/<%=products[i].category.slug%>/<%=products[i]._id%>">
+                        <h6 class="mt-2 mb-2">
+                          <%= products[i].title %>
+                        </h6>
+                      </a>
+                      <div class="price">$<%= products[i].price %>
+                      </div>
+                    </div>
+                    <% if(products[i].available) {%>
+                      <a href="/add-to-cart/<%=products[i]._id%>"
+                        class="btn btn-block btn-secondary button-style mt-auto mb-2">
+                        Add to My Cart
+                      </a>
+                      <% } else { %>
+                        <a href="#" class="btn btn-block btn-danger button-style-danger mt-2 mb-2">
+                          Sold out
+                        </a>
+                        <%} %>
+                  </div>
+                </div>
+                <%}%>
+            </div>
+          </div>
+          <!--/.First slide-->
+
+          <!--Second slide-->
+          <div class="carousel-item">
+            <div class="row">
+              <% for(let i=3; i<6; i++) { %>
+                <div class="col-md-4 product-index-box">
+                  <div class="single-product d-flex flex-column h-100">
+                    <a class="title-link" href="/products/<%=products[i].category.slug%>/<%=products[i]._id%>">
+                      <img src="<%= products[i].imagePath %>" alt="Bag" class="img-fluid" />
+
+                    </a>
+                    <div class="product-info">
+                      <a class="title-link" href="/products/<%=products[i].category.slug%>/<%=products[i]._id%>">
+                        <h6 class="mt-2 mb-2">
+                          <%= products[i].title %>
+                        </h6>
+                      </a>
+                      <div class="price">$<%= products[i].price %>
+                      </div>
+                    </div>
+                    <% if(products[i].available) {%>
+                      <a href="/add-to-cart/<%=products[i]._id%>"
+                        class="btn btn-block btn-secondary button-style mt-auto mb-2">
+                        Add to My Cart
+                      </a>
+                      <% } else { %>
+                        <a href="#" class="btn btn-block btn-danger button-style-danger mt-2 mb-2">
+                          Sold out
+                        </a>
+                        <%} %>
+                  </div>
+                </div>
+                <%}%>
+            </div>
+          </div>
+          <!--/.Second slide-->
+
+          <!--Third slide-->
+          <div class="carousel-item">
+            <div class="row">
+              <% for(let i=6; i<9; i++) { %>
+                <div class="col-md-4 product-index-box">
+                  <div class="single-product d-flex flex-column h-100">
+                    <a class="title-link" href="/products/<%=products[i].category.slug%>/<%=products[i]._id%>">
+                      <img src="<%= products[i].imagePath %>" alt="Bag" class="img-fluid" /></a>
+                    <div class="product-info">
+                      <a class="title-link" href="/products/<%=products[i].category.slug%>/<%=products[i]._id%>">
+                        <h6 class="mt-2 mb-2">
+                          <%= products[i].title %>
+                        </h6>
+                      </a>
+                      <div class="price">$<%= products[i].price %>
+                      </div>
+                    </div>
+                    <% if(products[i].available) {%>
+                      <a href="/add-to-cart/<%=products[i]._id%>"
+                        class="btn btn-block btn-secondary button-style mt-auto mb-2">
+                        Add to My Cart
+                      </a>
+                      <% } else { %>
+                        <a href="#" class="btn btn-block btn-danger button-style-danger mt-2 mb-2">
+                          Sold out
+                        </a>
+                        <%} %>
+                  </div>
+                </div>
+                <%}%>
+            </div>
+          </div>
+          <!--/.Third slide-->
+        </div>
+        <!--/.Slides-->
+      </div>
+      <!--/.Carousel Wrapper-->
+    </div>
+
+
+  <hr class="gradient-style" style="margin-top: 10px;" />
+
+    <!-- Store's categories section -->
+    <div class="container">
+      <h3 class=" mb-3 mt-4">#For_You</h3>
+      <div class="row text-center m-auto">
+        <div class="col-lg-3 col-md-3 col-sm-12 text-center ml-2" style="display: flex;">
+          <a class="title-link" href="/user/profile" style="display: inline; margin-left: 104px;">
+            <img src="images/orders.svg" alt="category" class="circle-img" />
+            <h4 class="mb-3 mt-3">Your Orders</h4>
+          </a>
+          <a class="title-link" href="/pages/careers" style="display: inline; margin-left: 104px;">
+            <img src="images/career.svg" alt="category" class="circle-img" />
+            <h4 class="mb-3 mt-3">Get Career</h4>
+          </a>
+          <a class="title-link" href="/pages/contact-us" style="display: inline; margin-left: 104px;">
+            <img src="images/ask.svg" alt="category" class="circle-img" />
+            <h4 class="mb-3 mt-3">Ask Us</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <%- include ../partials/footer %>
+      <footer>
+        <section id="contact" class="mt-5">
+
+          <div class="footer_container" style="align-items: center; justify-content: center;">
+            <a href="/" style="text-decoration: none;">
+              <img src="/images/icons8-W.png" alt="logo" class="img-logo2">
+            </a>
+            <div class="navbar-brand name-logo2">
+              <p class="namelogo">Talabatak</p>
+            </div>
+          </div>
+          <div class="line">
+          </div>
+          <div class="footer__bottom flex flex-column-mobile">
+            <div class="footer__contact">
+              <p>Talabatak Central Office<br>
+                <span>9999 Najah Street<br>
+                  Palestine, Najah national university</span>
+              </p>
+            </div>
+            <div class="footer__contact footer__contact--left">
+              <p>
+                Contact Us (Central Office)<br>
+                P : +1 999-999-9999<br>
+                M : contact@Talabatak.com</p>
+            </div>
+            <div class="footer__icons-box">
+              <ul class="footer__icons flex">
+                <li>
+                  <a href="https://www.facebook.com/"><img src="https://cdn-icons-png.flaticon.com/128/174/174848.png"
+                      alt="icon-facebook" class="socials"></a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png"
+                      alt="icon-youtube" class="socials"></a>
+                </li>
+                <li>
+                  <a href="https://www.linkdin.com/"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                      alt="icon-linkdin" class="socials"></a>
+                </li>
+                <li>
+                  <a href="https://www.pinterest.com/"><img src="https://cdn-icons-png.flaticon.com/512/220/220214.png"
+                      alt="icon-pinterest" class="socials"></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/"><img
+                      src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="icon-instagram"
+                      class="socials"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="ft-right-payment">
+            <h6 tabindex="0" style="opacity: 0.5;">WE ACCEPT</h6>
+            <div tabindex="0" role="contentinfo" class="bank-img"
+              aria-label="We accept PayPal, Visa, Mastercard, Maestro, and more."><img aria-hidden="true" tabindex="-1"
+                data-src="//img.ltwebstatic.com/images3_pi/2021/03/09/161528368123dd7a35ad8708b0dfc74b3630526891.png"
+                class="c-img-con-m j-verlok-lazy loaded"
+                data-lazy-src="//img.ltwebstatic.com/images3_pi/2021/03/09/161528368123dd7a35ad8708b0dfc74b3630526891.png"
+                src="//img.ltwebstatic.com/images3_pi/2021/03/09/161528368123dd7a35ad8708b0dfc74b3630526891.png"
+                data-was-processed="true"><img aria-hidden="true" tabindex="-1"
+                data-src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282732803587566708.png"
+                class="c-img-con-m j-verlok-lazy loaded"
+                data-lazy-src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282732803587566708.png"
+                src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282732803587566708.png"
+                data-was-processed="true"><img aria-hidden="true" tabindex="-1"
+                data-src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282732983375743706.png"
+                class="c-img-con-m j-verlok-lazy loaded"
+                data-lazy-src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282732983375743706.png"
+                src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282732983375743706.png"
+                data-was-processed="true"><img aria-hidden="true" tabindex="-1"
+                data-src="//img.ltwebstatic.com/images2_pi/2018/06/06/1528273036537082707.png"
+                class="c-img-con-m j-verlok-lazy loaded"
+                data-lazy-src="//img.ltwebstatic.com/images2_pi/2018/06/06/1528273036537082707.png"
+                src="//img.ltwebstatic.com/images2_pi/2018/06/06/1528273036537082707.png" data-was-processed="true"><img
+                aria-hidden="true" tabindex="-1"
+                data-src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282731342688549608.png"
+                class="c-img-con-m j-verlok-lazy loaded"
+                data-lazy-src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282731342688549608.png"
+                src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282731342688549608.png"
+                data-was-processed="true"><img aria-hidden="true" tabindex="-1"
+                data-src="//img.ltwebstatic.com/images2_pi/2018/06/06/1528273151799711689.png"
+                class="c-img-con-m j-verlok-lazy loaded"
+                data-lazy-src="//img.ltwebstatic.com/images2_pi/2018/06/06/1528273151799711689.png"
+                src="//img.ltwebstatic.com/images2_pi/2018/06/06/1528273151799711689.png" data-was-processed="true"><img
+                aria-hidden="true" tabindex="-1"
+                data-src="//img.ltwebstatic.com/images3_pi/2021/02/05/161250863025fd3f042cab4a0148630b1708a6aefd.webp"
+                class="c-img-con-m j-verlok-lazy loaded"
+                data-lazy-src="//img.ltwebstatic.com/images3_pi/2021/02/05/161250863025fd3f042cab4a0148630b1708a6aefd.webp"
+                src="//img.ltwebstatic.com/images3_pi/2021/02/05/161250863025fd3f042cab4a0148630b1708a6aefd.webp"
+                data-was-processed="true"><img aria-hidden="true" tabindex="-1"
+                data-src="//img.ltwebstatic.com/images3_pi/2021/02/05/161250868370a001fbd452127bffec8e8ab4488112.webp"
+                class="c-img-con-m j-verlok-lazy loaded"
+                data-lazy-src="//img.ltwebstatic.com/images3_pi/2021/02/05/161250868370a001fbd452127bffec8e8ab4488112.webp"
+                src="//img.ltwebstatic.com/images3_pi/2021/02/05/161250868370a001fbd452127bffec8e8ab4488112.webp"
+                data-was-processed="true"><img aria-hidden="true" tabindex="-1"
+                data-src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282731651043358291.png"
+                class="c-img-con-m j-verlok-lazy loaded"
+                data-lazy-src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282731651043358291.png"
+                src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282731651043358291.png"
+                data-was-processed="true"><img aria-hidden="true" tabindex="-1"
+                data-src="//img.ltwebstatic.com/images3_pi/2020/12/04/160707548502d822d136d21e8166243abb60b15c41.png"
+                class="c-img-con-m j-verlok-lazy loaded"
+                data-lazy-src="//img.ltwebstatic.com/images3_pi/2020/12/04/160707548502d822d136d21e8166243abb60b15c41.png"
+                src="//img.ltwebstatic.com/images3_pi/2020/12/04/160707548502d822d136d21e8166243abb60b15c41.png"
+                data-was-processed="true"><img aria-hidden="true" tabindex="-1"
+                data-src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282733431754785346.png"
+                class="c-img-con-m j-verlok-lazy loaded"
+                data-lazy-src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282733431754785346.png"
+                src="//img.ltwebstatic.com/images2_pi/2018/06/06/15282733431754785346.png"
+                data-was-processed="true"><img aria-hidden="true" tabindex="-1"
+                data-src="//img.ltwebstatic.com/images3_pi/2019/11/04/15728337019856d004cc3b6372a539162a6178c956.png"
+                class="c-img-con-m j-verlok-lazy loaded"
+                data-lazy-src="//img.ltwebstatic.com/images3_pi/2019/11/04/15728337019856d004cc3b6372a539162a6178c956.png"
+                src="//img.ltwebstatic.com/images3_pi/2019/11/04/15728337019856d004cc3b6372a539162a6178c956.png"
+                data-was-processed="true"></div>
+          </div>
+      </footer>
+      </div>
+
+
+      <script src="/javascripts/main.js"></script>
