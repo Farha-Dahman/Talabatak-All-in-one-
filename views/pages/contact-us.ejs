@@ -1,11 +1,9 @@
-<%- include ../partials/header %>
-<div class="mynav">From your place, for all the stores</div>
+<%- include ../partials/header %> <%- include ../partials/categories-navbar %>
 
-
-<div class="container">
+<div class="container" style="border: 2px solid black; margin-top: 20px; box-shadow: 20px 20px 10px grey; margin-bottom: 60px;">
   <div class="row">
     <div class="col-lg-8 col-md-12 m-auto">
-      <h1 class="mt-4 mb-4 text-center">Contact Us</h1>
+      <h1 class="mt-4 mb-4 text-center" style="line-break: 1px;">Contact Us</h1>
       <!-- Flash message -->
       <% if (successMsg != null && successMsg) { %>
         <div id="success" class="alert alert-success">
@@ -13,7 +11,7 @@
         </div>
         <% } %>
     </div>
-    <div class="col-lg-8 col-md-12 text-justify m-auto">
+    <div class="col-lg-8 col-md-12 text-justify m-auto" style="font-weight: bold;">
       <!-- Introduction -->
     <div class="mt-4 mb-4">
       <p>You are always welcome to contact us at anytime! Feel free to email us or phone us using our contact details below<br />
@@ -28,23 +26,23 @@
         </p>
         <p>
           For general inquiries:
-          <a href="mailto:general@email.com">
+          <a href="mailto:Talabatak@email.com">
             <i class="fa fa-envelope" aria-hidden="true"></i>
-            <u>general@email.com</u>
+            <u>Talabatak@email.com</u>
           </a>
         </p>
         <p>
           For orders problems:
-          <a href="mailto:orders@email.com">
+          <a href="mailto:Talabatak-pro@email.com">
             <i class="fa fa-envelope" aria-hidden="true"></i>
-            <u>orders@email.com</u>
+            <u>Talabatak-pro@email.com</u>
           </a>
         </p>
         <p>
           For technical support:
-          <a href="mailto:support@email.com">
+          <a href="mailto:Talabatak97@email.com">
             <i class="fa fa-envelope" aria-hidden="true"></i>
-            <u>support@email.com</u>
+            <u>Talabatak97@email.com</u>
           </a>
         </p>
       </div>
@@ -54,14 +52,7 @@
           <h6><i>Contact us by phone:</i></h6>
         </p>
         <p>
-          Call center phone 1:
-          <a href="tel:555-555-5555">
-            <i class="fa fa-phone" aria-hidden="true"></i>
-            555-555-5555
-           </a>
-        </p>
-        <p>
-          Call center phone 2:
+          Call center phone:
           <a href="tel:555-555-5555">
             <i class="fa fa-phone" aria-hidden="true"></i>
             555-555-5555
@@ -79,33 +70,24 @@
 
     <!-- Contact us form -->
     <div class="col-lg-8 col-md-12 m-auto">
-      <div class="mt-5 mb-4">
-        <h2>Contact Us Form</h2>
+      <div class="mt-5 mb-4" style="font-weight: bold;">
+        <h2>Contact Us</h2>
         <!-- Error flash message -->
-        <% if(errorMsg!=null && errorMsg.length>0) {%>
-          <div id="flash-msg" class="alert alert-danger">
-            <% errorMsg.forEach((message) => { %>
-            <p>
-              <%=message %>
-            </p>
-            <%}) %>
-          </div>
-          <%}%>
         <form action="/pages/contact-us" method="POST">
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="name" class="form-control" name="name" id="name" required />
+            <input type="name" class="form-control" name="name" id="name" required placeholder="Yourname"/>
           </div>
           <div class="form-group">
             <label for="email">Email address</label>
-            <input type="email" class="form-control" name="email" id="email" required />
+            <input type="email" class="form-control" name="email" id="email" required placeholder="yourname@domain.com" />
           </div>
           <div class="form-group">
             <label for="message">Message contents</label>
             <textarea class="form-control" name="message" id="message" rows="5" placeholder="Please write your message here..." required></textarea>
           </div>
           <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-          <button type="submit" class="btn btn-primary button-style">
+          <button id="submit" type="submit" class="btn btn-primary button-style">
             Submit
           </button>
         </form>
@@ -113,5 +95,36 @@
     </div>
   </div>
 </div>
+<% if(errorMsg==null && errorMsg.length<10) {%>
+  <div id="flash-msg" class="alert alert-danger">
+    <% errorMsg.forEach((message) => { %>
+    <p>
+      <%=message %>
+    </p>
+    <%}) %>
+  </div>
+  <%}%>
+
+  <script type="text/javascript">
+      (function() {
+          emailjs.init('farhajehad@gmail.com');
+      })();
+  </script>
+  <script type="text/javascript">
+      window.onload = function() {
+          document.getElementById('contact-form').addEventListener('submit', function(event) {
+              event.preventDefault();
+              // generate a five digit number for the contact_number variable
+              this.contact_number.value = Math.random() * 100000 | 0;
+              // these IDs from the previous steps
+              emailjs.sendForm('contact_service', 'contact_form', this)
+                  .then(function() {
+                      console.log('SUCCESS!');
+                  }, function(error) {
+                      console.log('FAILED...', error);
+                  });
+          });
+      }
+  </script>
 
 <%- include ../partials/footer %>
