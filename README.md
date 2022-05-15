@@ -70,4 +70,4 @@ All the models can be found in the models directory created using mongoose.
 
 
 
-- 2022 Made By [Farha Dahman, Nama' Salameh, Raghad Khatatba, Ahmad Amer](https://github.com/maryamaljanabi)
+- 2022 Made By [Farha Dahman, Nama' Salameh, Raghad Khatatba, Ahmad Amer]
