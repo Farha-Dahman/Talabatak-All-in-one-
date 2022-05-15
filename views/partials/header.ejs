@@ -78,13 +78,13 @@
       <div class="col-md-4 col-sm-12 col-xs-12 right-nav">
         <ul>
           <li>
-            <a href="/shopping-cart">
+            <a href="/shopping-cart" >
               <i class="fas fa-shopping-cart"></i> <% if(session.cart) { %>
-              <span class="badge badge-pill badge-info"
+              <span class="badge badge-pill badge-info" style="background-color: #de5b6d;"
                 ><%= session.cart.totalQty %></span
               >
               <% } else { %>
-              <span class="badge badge-pill badge-info">0</span>
+              <span class="badge badge-pill badge-info" style="background-color: #de5b6d;">0</span>
               <% } %>
             </a>
           </li>
