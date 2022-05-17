@@ -618,3 +618,9 @@ footer {
     height: 150px;
   }
 }
+/*footer*/
+.c-footer .ft-right .ft-right-payment .bank-img .c-img-con-m {
+  display: inline-block;
+  height: 24px;
+  margin-right: 10px;
+}
