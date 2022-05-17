@@ -1,31 +1,47 @@
-<%- include ../partials/header %> 
-<div class="mynav">From your place, for all the stores</div>
+<style>
+  .width {
+    width: 500px;
+  }
+</style>
 
+<%- include ../partials/header %>
+  <%- include ../partials/categories-navbar %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-md-12 m-auto text-justify">
-      <h1 class="mt-4 mb-5 text-center">About Us</h1>
-      <h3>Welcome to our store</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores nam
-        voluptatem adipisci sed amet ipsa quod reiciendis eos. Magnam ad
-        sapiente aut a libero aliquam veritatis incidunt molestiae tempora?
-      </p>
-      <p>
-        Maxime! Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-        autem assumenda vel laudantium quo ipsum omnis earum nostrum, excepturi
-        quibusdam, dicta cupiditate voluptatibus aperiam molestiae? Facilis
-        ipsum esse eligendi nobis.
-      </p>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-12 m-auto text-justify"
+          style=" width:600px; font-family: jost,sans-serif; font-weight: bold;">
+          <h1 class="mt-4 mb-5 text-center">About Us</h1>
+          <h3 style="text-align: center;">Welcome to our store</h3>
+          <div style="display:flex; ">
+            <p class="width" style="margin-top: 50px;">
+              Some customers prefer to have a system that helps them access all the items they want in one place quickly
+              and easily, and to inform them of all the offers in different stores and also to help them not to waste money on the
+              delivery price for each order, such a system will save customers time and help them get the items they want Easily, quickly and
+              inexpensively, all of this will increase customer satisfaction, which in turn will increase the revenues and profits of
+              all the stores that will enter into this system.
+            </p>
+            <img src="/images/aboutUs.webp" alt="profile-image"
+              style="width: 370px; height: 400px; margin-top:0px; margin-top: 2px;">
+          </div>
+          <p>
+            We are here, in turn, providing different types of goods to you, so that you can find everything you need
+            here,
+            in order to help you save your time and money, just order what you want from our website and you will
+            receive all the items
+            you ordered with one delivery, and a period not exceeding two days!<br>
+            We are pleased to be at your best belief in us, and that you enjoy your experience with us.<br>
+            We care about your happiness and comfort! We hope you enjoy..<br>
+          </p>
+        </div>
+
+        <div class="col-lg-8 col-md-12 mx-auto mt-3 mb-3">
+          <h3>Our location on map</h3>
+          <div class="mt-4" id="map" style="width: 100%; height: 400px;"></div>
+        </div>
+      </div>
     </div>
-    <div class="col-lg-8 col-md-12 mx-auto mt-3 mb-3">
-      <h3>Our location on map</h3>
-      <div class="mt-4" id="map" style="width: 100%; height: 400px;"></div>
-    </div>
-  </div>
-</div>
 
-<script type="text/javascript" src="/javascripts/map.js"></script>
+    <script type="text/javascript" src="/javascripts/map.js"></script>
 
-<%- include ../partials/footer %>
+    <%- include ../partials/footer %>
