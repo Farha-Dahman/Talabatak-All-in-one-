@@ -21,6 +21,25 @@ The website resembles a real store and you can add products to your cart and pay
 
 In order to access the admin panel on <b>admin</b> you need to provide the admin email and password.
 
+## Features
+
+The Website displays a virtual products store that contains virtual products and contact information.
+Users can do the following:
+
+- Create an account, login or logout
+- Browse available products added by the admin
+- The profile contains all the orders a user has made
+- To logout, a user must be logged in
+- Add products to the shopping cart
+- Delete products from the shopping cart
+- Display the shopping cart
+
+
+Admins can do the following:
+
+- Login or logout to the admin panel
+- View all the information stored in the database. They can view/add/edit/delete orders, users, products and categories. The cart model cannot be modified by an admin because a cart is either modified by the logged in user before the purchase or deleted after the purchase.
+
 ## Database
 
 All the models can be found in the model directory created using mongoose.
