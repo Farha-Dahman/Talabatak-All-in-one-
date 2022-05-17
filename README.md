@@ -68,6 +68,19 @@ All the models can be found in the models directory created using mongoose.
 - available (Boolean)
 - createdAt (Date)
 
+### Cart Schema:
+
+- totalQty (Number)
+- totalCost (Number)
+- createdAt(Date)
+- user (ObjectId - a reference to the user schema)
+- items: an array of objects, each object contains: <br>
+  ~ productId (ObjectId - a reference to the product schema)<br>
+  ~ qty (Number) <br>
+  ~ price (Number) <br>
+  ~ title (String) <br>
+  ~ productCode (Number) <br>
+
 ### Order Schema:
 
 - user (ObjectId - a reference to the user schema)
