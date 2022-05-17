@@ -68,6 +68,14 @@ All the models can be found in the models directory created using mongoose.
 - available (Boolean)
 - createdAt (Date)
 
+### Order Schema:
 
+- user (ObjectId - a reference to the user schema)
+- cart (instead of a reference, we had to structure an object identical to the cart schema because of AdminBro, so we can display the cart's contents in the admin interface under each order)
+- Delivered (Boolean)
+- address (String)
+- paymentId (String)
+- createdAt (Date)
 
-- 2022 Made By [Farha Dahman, Nama' Salameh, Raghad Khatatba, Ahmad Amer]
+<br>
+2022 Made By [Farha Dahman, Nama' Salameh, Raghad Khatatba, Ahmad Amer]
